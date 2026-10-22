@@ -1,0 +1,49 @@
+{
+	"geode": "5.11.2",
+	"gd": {
+		"win": "2.2081"
+	},
+	"version": "v2.0.0",
+	"id": "ai.predictivebuffer",
+	"name": "Predictive Input Buffer",
+	"developer": "lilWC",
+	"description": "Trajectory-based input buffer: delays early clicks/releases by up to 8+ frames, with orb, pad and portal-aware prediction.",
+	"settings": {
+		"custom-ticks": {
+			"type": "int",
+			"name": "Custom stage: max delay (ticks)",
+			"description": "Max delay for the CUSTOM F6 stage, all modes except wave. 4 ticks = 1 frame at 60fps.",
+			"default": 40,
+			"min": 1,
+			"max": 64
+		},
+		"custom-wave-ticks": {
+			"type": "int",
+			"name": "Custom stage: max wave delay (ticks)",
+			"description": "Max delay for the CUSTOM F6 stage while in wave.",
+			"default": 20,
+			"min": 0,
+			"max": 64
+		},
+		"sim-budget-ms": {
+			"type": "float",
+			"name": "Prediction time budget (ms)",
+			"description": "Max time spent predicting per click. Higher = finds longer saves on big windows, but may hitch on dense levels.",
+			"default": 4.0,
+			"min": 1.0,
+			"max": 30.0
+		},
+		"smart-prediction": {
+			"type": "bool",
+			"name": "Orb / pad / portal prediction",
+			"description": "Let the ghost use orbs, pads, gravity portals and speed portals. Turn off if you see glitches with objects.",
+			"default": true
+		},
+		"debug-console": {
+			"type": "bool",
+			"name": "Debug console window",
+			"description": "Also open a separate Windows console with the same log as the in-game K panel. Needs a restart.",
+			"default": false
+		}
+	}
+}
